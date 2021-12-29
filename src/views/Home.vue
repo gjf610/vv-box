@@ -11,7 +11,7 @@ import TopNav from '../components/TopNav.vue'
       <h1>VV-box UI</h1>
       <h2>一个骑士色彩的UI框架</h2>
       <p class="actions">
-        <a>Github</a>
+        <a>GitHub</a>
         <a>开始</a> 
       </p>
     </div>
@@ -25,9 +25,9 @@ import TopNav from '../components/TopNav.vue'
   align-items: center;
   flex-direction: column;
   background: lightgreen;
-  >.action {
+  >.actions {
     padding: 8px 0;
-    a {
+    > a {
       margin: 0 8px;
       padding: 0 8px;
       background: #fff;
@@ -35,7 +35,7 @@ import TopNav from '../components/TopNav.vue'
       $h: 28px;
       height: $h;
       line-height: $h;
-      border-radius: $h/2;
+      border-radius: calc($h/2);
     }
   }
 }
