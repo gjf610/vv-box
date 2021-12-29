@@ -3,8 +3,13 @@ import Jianfeng from "./components/Jianfeng.vue";
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Jianfeng msg="Hello Vue 3 + TypeScript + Vite" />
+  <div>
+    导航栏|
+    <router-link to="/">Jianfeng</router-link>
+    <router-link to="/2">Jianfeng2</router-link>
+  </div>
+  <hr />
+  <router-view></router-view>
 </template>
 
 <style>
