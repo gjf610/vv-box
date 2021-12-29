@@ -1,11 +1,22 @@
-<script setup lang="ts">
+<script  lang="ts">
+import { inject, Ref } from "vue";
 import TopNav from "../components/TopNav.vue";
+export default {
+  components: {TopNav},
+  setup() {
+    const menuVisible = inject<Ref<boolean>>('menuVisible')
+    return {
+      menuVisible
+    }    
+  }
+}
+
 </script>
 <template>
   <div>
     <TopNav />
     <div class="content">
-      <aside>
+      <aside v-if="menuVisible">
         <h2>组件列表</h2>
         <ol>
           <li>
