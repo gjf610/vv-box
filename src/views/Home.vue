@@ -11,8 +11,8 @@ import TopNav from '../components/TopNav.vue'
       <h1>VV-box UI</h1>
       <h2>一个骑士色彩的UI框架</h2>
       <p class="actions">
-        <a>GitHub</a>
-        <a>开始</a> 
+        <a href="https://github.com/gjf610?tab=repositories">GitHub</a>
+        <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
