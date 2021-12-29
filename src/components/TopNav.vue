@@ -30,13 +30,13 @@ export default {
   >.logo{
     max-width: 6em;
     margin-right: auto;
-    >.meun{
-      display: flex;
-      white-space: nowrap;
-      flex-wrap: nowrap;
-      > li{
-        margin: 0 1em;
-      }
+  }
+  >.menu{
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    > li{
+      margin: 0 1em;
     }
   }
 }
