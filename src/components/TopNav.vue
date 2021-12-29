@@ -9,17 +9,18 @@
   </div>
 </template>
 <script  lang="ts">
-import { inject, Ref } from 'vue'
-
-export default {
+import { defineComponent, inject, Ref } from 'vue'
+export default defineComponent({
   setup() {
-    const menuVisible = inject<Ref<boolean>>('menuVisible')  
+    const menuVisible = inject<Ref<boolean>>('menuVisible')
     const toggleMenu = () => {
-      menuVisible.value = !menuVisible?.value
+      if(menuVisible !== undefined){
+        menuVisible.value = !menuVisible.value
+      }
     }
-    return {toggleMenu}
+    return { toggleMenu }
   },
-}
+})
 </script>
 <style lang="scss" scoped>
 .topNav {
@@ -33,15 +34,15 @@ export default {
   left: 0;
   width: 100%;
   z-index: 10;
-  >.logo{
+  > .logo {
     max-width: 6em;
     margin-right: auto;
   }
-  >.menu{
+  > .menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
-    > li{
+    > li {
       margin: 0 1em;
     }
   }
@@ -56,14 +57,14 @@ export default {
     transform: translateY(-50%);
   }
   @media (max-width: 500px) {
-    >.menu{
+    > .menu {
       display: none;
     }
-    >.logo{
+    > .logo {
       margin: 0 auto;
     }
-    >.toggleAside{
-    display: inline-block;
+    > .toggleAside {
+      display: inline-block;
     }
   }
 }

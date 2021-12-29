@@ -1,15 +1,8 @@
-<script  lang="ts">
+<script setup lang="ts">
 import { inject, Ref } from "vue";
 import TopNav from "../components/TopNav.vue";
-export default {
-  components: {TopNav},
-  setup() {
-    const menuVisible = inject<Ref<boolean>>('menuVisible')
-    return {
-      menuVisible
-    }    
-  }
-}
+
+const menuVisible = inject<Ref<boolean>>('menuVisible')
 
 </script>
 <template>
