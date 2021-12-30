@@ -4,7 +4,7 @@
   </button>
 </template>
 <script  lang="ts">
-import {  defineComponent, ref } from 'vue'
+import {  defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
@@ -12,7 +12,7 @@ export default defineComponent({
   },
   setup(props, context) {
     const toggle = () => {
-      context.emit('input', !props.value)
+      context.emit('update:value', !props.value)
     }
     return {toggle}
   }
