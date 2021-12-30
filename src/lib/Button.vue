@@ -1,10 +1,10 @@
 <template>
-    <button class="vv-button" :class="{[`vv-theme-${theme}`]: theme}">
+    <button class="vv-button" :class="classes">
       <slot></slot>
     </button>  
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
@@ -12,7 +12,21 @@ export default defineComponent({
       type:String,
       default: "button"
     },
+    size: {
+      type: String,
+      default: "normal"
+    }
   },
+  setup(props) {
+    const {theme, size} = props
+    const classes = computed(()=> {
+      return {
+        [`vv-theme-${theme}`]: theme,
+        [`vv-size-${size}`]: size,
+      }
+    })
+    return {classes}
+  }
 })
 </script>
 
@@ -64,6 +78,16 @@ $radius: 4px;
     &:hover,&:focus{
       background: darken(white, 5%);
     }
+  }
+  &.vv-size-big{
+    font-size: 24px;
+    height: calc($h + 16px);
+    padding: 0 16px;
+  }
+  &.vv-size-small{
+    font-size: 12px;
+    height: calc($h - 12px);
+    padding: 0 4px;
   }
 }
 </style>
