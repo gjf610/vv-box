@@ -1,5 +1,5 @@
 <template>
-  <button :class="{checked: value}" @click="toggle">
+  <button class="vv-switch" :class="{'vv-checked': value}" @click="toggle">
     <span></span>
   </button>
 </template>
@@ -22,7 +22,7 @@ export default defineComponent({
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button{
+.vv-switch{
   height: $h;
   width: $h*2;
   border: none;
@@ -39,7 +39,7 @@ button{
     border-radius: calc($h2/2);
     transition: all 250ms ease-in;
   }
-  &.checked {
+  &.vv-checked {
     background: greenyellow;
     > span {
       left: calc(100% - $h2 - 2px);

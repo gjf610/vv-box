@@ -1,7 +1,9 @@
+import './lib/vv.scss'
+import "./index.scss"
 import { createApp } from 'vue'
 import App from './App.vue'
 import { router } from './router'
-import './index.scss'
+
 
 const app = createApp(App)
 app.use(router)
