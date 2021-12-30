@@ -1,13 +1,14 @@
 <template>
-  <Switch></Switch>
+  <Switch :value="y" @input="y = $event"/>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import Switch from "../lib/Switch.vue";
 export default defineComponent({
-  components:{Switch},
+  components: {Switch},
   setup() {
-    
+    const y = ref<boolean>(false)
+    return { y }
   },
 })
 </script>
