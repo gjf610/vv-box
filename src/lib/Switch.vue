@@ -11,14 +11,18 @@ button{
   background: blue;
   border-radius: calc($h/2);
   position: relative;
+  > span{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: $h2;
+    width: $h2;
+    background: white;
+    border-radius: calc($h2/2);
+  }
+  &:hover > span {
+    left: calc(100% - $h2 - 2px);
+  }
 }
-span{
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  height: $h2;
-  width: $h2;
-  background: white;
-  border-radius: calc($h2/2);
-}
+
 </style>
