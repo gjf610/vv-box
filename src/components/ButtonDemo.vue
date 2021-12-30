@@ -38,7 +38,14 @@
     <Button theme="text" level="main">main text</Button>
     <Button theme="text">normal text</Button>
     <Button theme="text" level="danger">danger text</Button>
-  </div>  
+  </div>
+  <h1>示例4</h1>
+  <div>
+    <Button disabled>你好</Button>
+    <Button :disabled="true">你好</Button>
+    <Button theme="link" disabled>你好</Button>
+    <Button theme="text" disabled>你好</Button>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'

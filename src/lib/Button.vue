@@ -1,5 +1,5 @@
 <template>
-    <button class="vv-button" :class="classes">
+    <button class="vv-button" :class="classes" :disabled="disabled">
       <slot></slot>
     </button>  
 </template>
@@ -19,6 +19,10 @@ export default defineComponent({
     level: {
       type: String,
       default: "normal"
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props) {
@@ -42,6 +46,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .vv-button{
   box-sizing: border-box;
   height: $h;
@@ -117,8 +122,15 @@ $red: red;
         border-color: darken($red, 10%);
       }
     }
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
   }
-  &.vv-theme-link {
+  &.vv-theme-link,&.vv-theme-text {
     &.vv-level-main {
       color: $blue;
       &:hover,
@@ -133,21 +145,9 @@ $red: red;
         color: darken($red, 10%);
       }
     }
-  }
-  &.vv-theme-text {
-    &.vv-level-main {
-      color: $blue;
-      &:hover,
-      &:focus {
-        color: darken($blue, 10%);
-      }
-    }
-    &.vv-level-danger {
-      color: $red;
-      &:hover,
-      &:focus {
-        color: darken($red, 10%);
-      }
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
