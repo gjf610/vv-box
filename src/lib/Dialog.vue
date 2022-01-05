@@ -20,7 +20,6 @@
   </Teleport>
  
 </template>
-
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
@@ -58,7 +57,7 @@ export default defineComponent({
       }
     }
     const cancel = () => {
-      context.emit('cancel')
+      props.cancel?.()
       close()
     }
 
