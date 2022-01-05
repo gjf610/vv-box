@@ -1,24 +1,32 @@
 <template>
-  <div class="vv-dialog-overlay"></div>
-  <div class="vv-dialog-wrapper">
-    <div class="vv-dialog">
-      <header>标题<span class="vv-dialog-close"></span></header>
-      <main>
-        <p>第一行字</p>
-        <p>第二行字</p>
-      </main>
-      <footer>
-        <Button level="main">OK</Button>
-        <Button>Cancel</Button>
-      </footer>      
-    </div>
+<template v-if="visible">
+    <div class="vv-dialog-overlay"></div>
+    <div class="vv-dialog-wrapper">
+      <div class="vv-dialog">
+        <header>标题<span class="vv-dialog-close"></span></header>
+        <main>
+          <p>第一行字</p>
+          <p>第二行字</p>
+        </main>
+        <footer>
+          <Button level="main">OK</Button>
+          <Button>Cancel</Button>
+        </footer>      
+      </div>
+    </div>  
+</template>
 
-  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Button from "./Button.vue";
 export default defineComponent({
+  props:{
+    visible: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {Button},
   setup() {
     
