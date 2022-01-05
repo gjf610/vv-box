@@ -3,6 +3,7 @@
     <div class="vv-tabs-nav">
       <div class="vv-tabs-item" :class="{selected: t === selected}"
        v-for="(t, index) in titles" :key="index" @click="select(t)">{{t}}</div>
+      <div class="vv-tabs-nav-indicator"></div>
     </div>
   </div>
   <div class="vv-tabs-content">
@@ -48,6 +49,15 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
+    }
   }
   &-item {
     margin: 0 16px;
