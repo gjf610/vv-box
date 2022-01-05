@@ -3,8 +3,8 @@
     <div class="vv-tabs-nav" ref="container">
       <div class="vv-tabs-item" :class="{selected: t === selected}"
        v-for="(t, index) in titles" :key="index"
-       :ref="el =>{if(t===selected) selectedItem = el}"
-        @click="select(t)">{{t}}</div>
+       :ref="el =>{if(t===selected)selectedItem = el}"
+       @click="select(t)">{{t}}</div>
       <div class="vv-tabs-nav-indicator" ref="indicator"></div>
     </div>
   </div>
@@ -14,7 +14,7 @@
 
 </template>
 <script lang="ts">
-import { computed, defineComponent, onMounted, onUpdated, ref } from 'vue'
+import { computed, defineComponent, ref, watchEffect } from 'vue'
 import Tab from "./Tab.vue";
 export default defineComponent({
   props: {
@@ -23,20 +23,19 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    const selectedItem = ref<HTMLDivElement>(null)
-    const indicator = ref<HTMLDivElement>(null)
-    const container = ref<HTMLDivElement>(null)
-    const x = () => {
-      const {width} = selectedItem.value.getBoundingClientRect()
-      indicator.value.style.width = width+'px'
-
-      const {left: left1} = container.value.getBoundingClientRect()
-      const {left: left2} = selectedItem.value.getBoundingClientRect()
-      const left = left2 - left1
-      indicator.value.style.left = left+'px'
-    }
-    onMounted(x)
-    onUpdated(x)
+    const selectedItem = ref<HTMLDivElement>()
+    const indicator = ref<HTMLDivElement>()
+    const container = ref<HTMLDivElement>()
+    watchEffect(() => {
+      if(selectedItem.value&&indicator.value&&container.value){
+        const {width} = selectedItem.value.getBoundingClientRect()
+        indicator.value.style.width = width+'px'
+        const {left: left1} = container.value.getBoundingClientRect()
+        const {left: left2} = selectedItem.value.getBoundingClientRect()
+        const left = left2 - left1
+        indicator.value.style.left = left+'px'
+      }
+    })
     const defaults = context.slots.default!()
     defaults.forEach(tag => {
       if(tag.type !== Tab){
