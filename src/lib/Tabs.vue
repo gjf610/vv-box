@@ -1,9 +1,11 @@
 <template>
   <div class="vv-tabs">
-    <div class="vv-tabs-nav">
+    <div class="vv-tabs-nav" ref="container">
       <div class="vv-tabs-item" :class="{selected: t === selected}"
-       v-for="(t, index) in titles" :key="index" @click="select(t)">{{t}}</div>
-      <div class="vv-tabs-nav-indicator"></div>
+       v-for="(t, index) in titles" :key="index"
+       :ref="el =>{if(el) navItems[index] = el}"
+        @click="select(t)">{{t}}</div>
+      <div class="vv-tabs-nav-indicator" ref="indicator"></div>
     </div>
   </div>
   <div class="vv-tabs-content">
@@ -12,7 +14,7 @@
 
 </template>
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { computed, defineComponent, onMounted, onUpdated, ref } from 'vue'
 import Tab from "./Tab.vue";
 export default defineComponent({
   props: {
@@ -21,6 +23,22 @@ export default defineComponent({
     }
   },
   setup(props, context) {
+    const navItems = ref<HTMLDivElement[]>([])
+    const indicator = ref<HTMLDivElement>(null)
+    const container = ref<HTMLDivElement>(null)
+    const x = () => {
+      const divs =navItems.value
+      const result = divs.filter(div=>div.classList.contains('selected'))[0]
+      const {width} = result.getBoundingClientRect()
+      indicator.value.style.width = width+'px'
+
+      const {left: left1} = container.value.getBoundingClientRect()
+      const {left: left2} = result.getBoundingClientRect()
+      const left = left2 - left1
+      indicator.value.style.left = left+'px'
+    }
+    onMounted(x)
+    onUpdated(x)
     const defaults = context.slots.default!()
     defaults.forEach(tag => {
       if(tag.type !== Tab){
@@ -36,7 +54,7 @@ export default defineComponent({
     const select = (title: string) => {
       context.emit('update:selected', title)
     }
-    return {defaults, titles, current, select}
+    return {navItems, indicator, container, defaults, titles, current, select}
   },
 })
 </script>
@@ -57,6 +75,7 @@ $border-color: #d9d9d9;
       left: 0;
       bottom: -1px;
       width: 100px;
+      transition: all 250ms;
     }
   }
   &-item {
