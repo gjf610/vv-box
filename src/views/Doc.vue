@@ -7,7 +7,7 @@ const menuVisible = inject<Ref<boolean>>('menuVisible')
 </script>
 <template>
   <div class="layout">
-    <TopNav class="nav" />
+    <TopNav toggleMenuButtonVisible class="nav" />
     <div class="content">
       <aside v-if="menuVisible">
         <h2>组件列表</h2>
