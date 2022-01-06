@@ -24,7 +24,6 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .topNav {
-  background: pink;
   display: flex;
   justify-content: center;
   align-items: center;
