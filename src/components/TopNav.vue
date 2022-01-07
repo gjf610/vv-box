@@ -46,12 +46,12 @@ $color: #007974;
   justify-content: center;
   align-items: center;
   padding: 16px;
-  color: $color;
+  color: $color;  
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   > .logo {
     max-width: 6em;
     margin-right: auto;
