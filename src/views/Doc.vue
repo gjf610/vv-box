@@ -57,7 +57,7 @@ const menuVisible = inject<Ref<boolean>>('menuVisible')
     padding-top: 60px;
     padding-left: 156px;
     @media (max-width: 500px) {
-      padding-left: 0; 
+      padding-left: 0;
     }
   }
 }
@@ -81,13 +81,13 @@ aside {
   left: 0;
   padding-top: 70px;
   height: 100%;
-  >h2{
+  > h2 {
     margin-bottom: 4px;
     padding: 0 16px;
   }
   > ol {
-    > li{
-      > a{
+    > li {
+      > a {
         display: block;
         padding: 4px 16px;
         text-decoration: none;

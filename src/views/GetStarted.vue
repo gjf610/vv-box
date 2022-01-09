@@ -1,8 +1,8 @@
 <template>
-  <article class="markdown-body">
-    <md />
-  </article>
+  <Markdown>
+    <GetStarted />
+  </Markdown>
 </template>
 <script setup lang="ts">
-import md from "../markdown/get-started.md";
+import GetStarted from "../markdown/get-started.md";
 </script>

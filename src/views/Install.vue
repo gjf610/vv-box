@@ -1,8 +1,8 @@
 <template>
-  <article class="markdown-body">
-    <md />
-  </article>
+  <Markdown>
+    <Install />
+  </Markdown>
 </template>
 <script setup lang="ts">
-import md from "../markdown/install.md";
+import Install from "../markdown/install.md";
 </script>
