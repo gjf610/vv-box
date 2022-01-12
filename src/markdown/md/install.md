@@ -1,4 +1,8 @@
-# 安装
+---
+title: 安装
+dics: markdown
+wrapperClass: ''
+---
 打开终端运行下列命令：
 ```shell
 npm install king-ui

@@ -19,8 +19,7 @@ export default defineComponent({
     })
     return () => (
       <article class="markdown-body">
-
-        <h2>{title.value}</h2>
+        <h1>{title.value}</h1>
         {h(content.value)}
       </article>
     )

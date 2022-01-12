@@ -5,7 +5,7 @@ import App from './App.vue'
 import { router } from './router'
 import "github-markdown-css";
 import 'vite-plugin-vuedoc/style.css'
-import Markdown from "./components/Markdown.vue";
+import Markdown from "./components/Markdown";
 
 const app = createApp(App)
 app.use(router)
