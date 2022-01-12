@@ -21,8 +21,8 @@ wrapperClass: ''
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
-import Dialog from "../lib/Dialog.vue";
-import Button from "../lib/Button.vue";
+import Dialog from "../../lib/Dialog.vue";
+import Button from "../../lib/Button.vue";
 
 const x = ref<boolean>(false)
 const toggle = () => {
@@ -43,8 +43,8 @@ const f2 = () => {}
 </template>
 <script lang="ts" setup>
 import { h } from "vue";
-import Button from '../lib/Button.vue'
-import { openDialog } from "../lib/openDialog";
+import Button from '../../lib/Button.vue'
+import { openDialog } from "../../lib/openDialog";
 const showDialog = () => {
   openDialog({
     title: h('strong', {}, '标题'),

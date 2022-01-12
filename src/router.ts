@@ -5,7 +5,7 @@ import ComponentDemo from './components/ComponentDemo';
 import Markdown from "./components/Markdown";
 import DocDemo from './components/DocDemo.vue';
 import { h } from "vue";
-const cDemoDoc = (filename: string) => h(ComponentDemo, { path: `./${filename}.doc.md`, key: filename })
+const cDemoDoc = (filename: string) => h(ComponentDemo, { path: `../markdown/components/${filename}.doc.md`, key: filename })
 const md = (filename: string) => h(Markdown, { path: `../markdown/md/${filename}.md`, key: filename })
 const history = createWebHashHistory()
 export const router = createRouter({

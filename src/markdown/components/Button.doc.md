@@ -15,7 +15,7 @@ wrapperClass: ''
   </div>
 </template>
 <script lang="ts" setup>
-import Button from "../lib/Button.vue";
+import Button from "../../lib/Button.vue";
 </script>
 ```
 
@@ -39,7 +39,7 @@ import Button from "../lib/Button.vue";
   </div>
 </template>
 <script lang="ts" setup>
-import Button from "../lib/Button.vue";
+import Button from "../../lib/Button.vue";
 </script>
 ```
 
@@ -63,7 +63,7 @@ import Button from "../lib/Button.vue";
   </div>
 </template>
 <script lang="ts" setup>
-import Button from "../lib/Button.vue";
+import Button from "../../lib/Button.vue";
 </script>
 ```
 
@@ -78,7 +78,7 @@ import Button from "../lib/Button.vue";
   </div>
 </template>
 <script lang="ts" setup>
-import Button from "../lib/Button.vue";
+import Button from "../../lib/Button.vue";
 </script>
 ```
 
@@ -88,6 +88,6 @@ import Button from "../lib/Button.vue";
     <Button loading>加载中</Button>
 </template>
 <script lang="ts" setup>
-import Button from "../lib/Button.vue";
+import Button from "../../lib/Button.vue";
 </script>
 ```

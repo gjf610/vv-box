@@ -14,8 +14,8 @@ wrapperClass: tabs-doc
 </template>
 <script lang="ts" setup>
 import { defineComponent, ref } from 'vue'
-import Tabs from "../lib/Tabs.vue";
-import Tab from "../lib/Tab.vue";
+import Tabs from "../../lib/Tabs.vue";
+import Tab from "../../lib/Tab.vue";
 const x = ref<string>('导航1')
 </script>
 ```
