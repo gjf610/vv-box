@@ -1,5 +1,5 @@
 ---
-title: Switch component
+title: Switch组件实例
 dics: component
 wrapperClass: switch-doc
 ---

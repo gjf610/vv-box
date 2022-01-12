@@ -4,12 +4,10 @@ import Doc from './views/Doc.vue';
 import Intro from "./views/intro.vue";
 import Install from "./views/Install.vue";
 import GetStarted from "./views/GetStarted.vue";
-import SwitchDemo from './components/SwitchDemo.vue';
-import ButtonDemo from "./components/ButtonDemo.vue";
-import DialogDemo from './components/DialogDemo.vue';
-import TabsDemo from './components/TabsDemo.vue';
+import ComponentDemo from './components/ComponentDemo';
 import DocDemo from './components/DocDemo.vue';
-
+import { h } from "vue";
+const cDemoDoc = (filename: string) => h(ComponentDemo, { path: `./${filename}.doc.md`, key: filename })
 const history = createWebHashHistory()
 export const router = createRouter({
   history: history,
@@ -21,10 +19,10 @@ export const router = createRouter({
         { path: 'intro', component: Intro },
         { path: 'get-started', component: GetStarted },
         { path: 'install', component: Install },
-        { path: 'switch', component: SwitchDemo },
-        { path: 'button', component: ButtonDemo },
-        { path: 'dialog', component: DialogDemo },
-        { path: 'tabs', component: TabsDemo }
+        { path: 'switch', component: cDemoDoc('Switch') },
+        { path: 'button', component: cDemoDoc('Button') },
+        { path: 'dialog', component: cDemoDoc('Dialog') },
+        { path: 'tabs', component: cDemoDoc('Tabs') }
       ]
     }
 
