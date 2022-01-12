@@ -1,5 +1,5 @@
 ---
-title: Dialog component
+title: Dialog组件实例
 dics: component
 wrapperClass: ''
 ---

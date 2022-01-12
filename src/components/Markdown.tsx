@@ -8,9 +8,9 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const content = shallowRef<VNode>(null)
-    const title = ref<string>('')
-    import(props.path).then(result => {
+    const content = shallowRef<VNode>(null);
+    const title = ref<string>('');
+    import(/* @vite-ignore */props.path).then(result => {
       content.value = result.default
       const { matter } = content.value.$vd
       title.value = matter.title

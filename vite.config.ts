@@ -5,7 +5,11 @@ import { createPlugin, vueDocFiles } from 'vite-plugin-vuedoc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    createPlugin({}),
+    createPlugin({
+      highlight: {
+        theme: 'one-light'
+      }
+    }),
     vue({
       include: [/\.vue$/, /\.md$/, ...vueDocFiles],
     }),

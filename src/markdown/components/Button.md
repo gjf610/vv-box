@@ -1,5 +1,5 @@
 ---
-title: Button component
+title: Button组件实例
 dics: component
 wrapperClass: ''
 ---
