@@ -2,7 +2,6 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import Home from './views/Home.vue';
 import Doc from './views/Doc.vue';
 import Markdown from "./components/Markdown";
-import DocDemo from './components/DocDemo.vue';
 import { h } from "vue";
 const md = (address: string, filename: string) => h(Markdown, { path: `../markdown/${address}/${filename}.md`, key: filename })
 const history = createWebHashHistory()
@@ -12,7 +11,7 @@ export const router = createRouter({
     { path: '/', component: Home },
     {
       path: '/doc', component: Doc, children: [
-        { path: '', component: DocDemo },
+        { path: '', redirect: '/doc/intro' },
         { path: 'intro', component: md('md', 'intro') },
         { path: 'get-started', component: md('md', 'get-started') },
         { path: 'install', component: md('md', 'install') },
