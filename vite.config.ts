@@ -4,6 +4,10 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import { createPlugin, vueDocFiles } from 'vite-plugin-vuedoc'
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
+  build: {
+    assetsDir: 'assets',
+  },
   plugins: [
     createPlugin({
       highlight: {
