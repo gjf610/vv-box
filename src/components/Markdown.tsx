@@ -1,26 +1,21 @@
-import { defineComponent, h, ref, shallowRef, VNode } from "vue";
+import { defineComponent, h } from "vue";
 
 export default defineComponent({
   props: {
-    path: {
+    component: {
+      type: Function,
+      required: true
+    },
+    title: {
       type: String,
       required: true
     }
   },
-  setup(props) {
-    const content = shallowRef<VNode>(null);
-    const title = ref<string>('');
-    import(/* @vite-ignore */props.path).then(result => {
-      content.value = result.default
-      const { matter } = content.value.$vd
-      title.value = matter.title
-    }).catch(err => {
-      console.error(err)
-    })
+  setup({component, title}) {
     return () => (
       <article class="markdown-body">
-        <h1>{title.value}</h1>
-        {h(content.value)}
+        <h2>{title}</h2>
+        {h(component)}
       </article>
     )
   }
