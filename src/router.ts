@@ -9,6 +9,7 @@ import Switch from './markdown/components/Switch.md';
 import Button from './markdown/components/Button.md';
 import Dialog from './markdown/components/Dialog.md';
 import Tabs from './markdown/components/Tabs.md';
+import Input from './markdown/components/Input.md';
 
 import { h } from "vue";
 
@@ -32,7 +33,8 @@ export const router = createRouter({
         { path: 'switch', component: md(Switch) },
         { path: 'button', component: md(Button) },
         { path: 'dialog', component: md(Dialog) },
-        { path: 'tabs', component: md(Tabs) }
+        { path: 'tabs', component: md(Tabs) },
+        { path: 'input', component: md(Input) },
       ]
     }
   ]

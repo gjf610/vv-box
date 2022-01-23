@@ -36,6 +36,9 @@ const menuVisible = inject<Ref<boolean>>('menuVisible')
           <li>
             <router-link to="/doc/tabs">Tabs组件</router-link>
           </li>
+          <li>
+            <router-link to="/doc/input">Input组件</router-link>
+          </li>
         </ol>
       </aside>
       <main>
