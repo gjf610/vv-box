@@ -48,3 +48,16 @@ import Input from "../../lib/Input.vue";
 import Input from "../../lib/Input.vue";
 </script>
 ```
+
+change
+```vue demo
+<template>
+  <Input value="铠武" @change="inputChange"/>
+</template>
+<script lang="ts" setup>
+import Input from "../../lib/Input.vue";
+const inputChange = (e) => {
+  console.log(e.target.value)
+}
+</script>
+```
