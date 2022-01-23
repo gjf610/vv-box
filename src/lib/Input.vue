@@ -5,10 +5,10 @@
       :value="value"
       :disabled="disabled"
       :readonly="readonly"
-      @change="$emit('change', $event)"
-      @input="$emit('input', $event)"
-      @focus="$emit('focus', $event)"
-      @blur="$emit('blur', $event)"
+      @change="$emit('update:value', ($event.target as HTMLInputElement).value)"
+      @input="$emit('update:value', ($event.target as HTMLInputElement).value)"
+      @focus="$emit('update:value', ($event.target as HTMLInputElement).value)"
+      @blur="$emit('update:value', ($event.target as HTMLInputElement).value)"
     />
     <template v-if="error">
       <span>{{ error }}</span>
@@ -36,10 +36,6 @@ export default defineComponent({
       type: String
     }
   },
-  setup(props, context) {
-
-
-  }
 })
 </script>
 <style lang="scss">

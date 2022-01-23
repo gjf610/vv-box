@@ -52,12 +52,27 @@ import Input from "../../lib/Input.vue";
 change
 ```vue demo
 <template>
-  <Input value="铠武" @change="inputChange"/>
+  <Input :value="gaim" @change="inputChange"/>
 </template>
 <script lang="ts" setup>
+import {ref} from 'vue'
 import Input from "../../lib/Input.vue";
+const gaim = ref('铠武')
 const inputChange = (e) => {
   console.log(e.target.value)
 }
+</script>
+```
+
+支持v-model
+```vue demo
+<template>
+  <Input v-model:value="drive"/>
+  <p>{{drive}}</p>
+</template>
+<script lang="ts" setup>
+import {ref} from 'vue'
+import Input from "../../lib/Input.vue";
+const drive = ref('驱动')
 </script>
 ```
